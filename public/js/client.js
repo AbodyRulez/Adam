@@ -3,36 +3,36 @@
 let pageNum = 1;
 
 function nextPage(){
-    if(pageNum == 80) return;
+    if(pageNum == 227) return;
     pageNum++;
     document.getElementById('pageNumber').value = pageNum;
-    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.jpg`;
+    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.png`;
 }
 
 function prevPage(){
     if(pageNum == 1) return;
     pageNum--;
     document.getElementById('pageNumber').value = pageNum;    
-    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.jpg`;
+    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.png`;
 }
 
 function pageInput(){
     let num = document.getElementById('pageNumber').value;
-    if(num <1 || num > 80 || getLength(num) > 2) return;
+    if(num <1 || num > 227 || getLength(num) > 3) return;
     pageNum = num;
-    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.jpg`;    
+    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.png`;    
 }
 
 function firstPage(){
     pageNum = 1;
     document.getElementById('pageNumber').value = pageNum;    
-    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.jpg`;
+    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.png`;
 }
 
 function lastPage(){
-    pageNum = 80;
+    pageNum = 227;
     document.getElementById('pageNumber').value = pageNum;        
-    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.jpg`;
+    document.getElementById('imageid').src = `img/Adam_Page_${padZero(pageNum)}.png`;
 }
 
 function getLength(number) {
@@ -40,5 +40,11 @@ function getLength(number) {
 }
 
 function padZero(num){
-    return (num < 10 && getLength(num) == 1) ? '0' + num : num;
+    if(getLength(num) == 3) return num;
+    let pad = 0;
+    if(num < 10 && getLength(num) == 1)
+        pad = '00' + num;
+    if(num >= 10 && getLength(num) == 2)
+        pad = '0' + num;
+    return pad;
 }
