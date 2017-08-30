@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Is Adam the first guy?</title>
+    </head>
+    <body>
+
+        <img id="imageid" src="img/Adam_Page_01.jpg" style="width: 100%" alt="First page">            
+        <div id="footer">
+            <button id="prevPage" onclick="firstPage()" style="padding:0.5rem;"><<</button>            
+            <button id="prevPage" onclick="prevPage()" style="padding:1rem;"><</button>
+            <input id="pageNumber" type="text" style="padding:1rem;text-align: center;" onchange="pageInput()">
+            <button id="nextPage" onclick="nextPage()" style="padding:1rem;">></button>
+            <button id="nextPage" onclick="lastPage()" style="padding:0.5rem;">>></button>            
+        </div>
+        <style>
+           
+            #footer {
+                position:fixed;
+                left:0em;
+                bottom:0em;
+                height:4em;
+                width:100%;
+                background:#000;
+                text-align:center;
+            }
+        </style>
+        <script src="../js/client.js"></script>                
+    </body>
+</html> 
