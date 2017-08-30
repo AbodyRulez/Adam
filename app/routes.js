@@ -1,4 +1,4 @@
-module.exports = (app, express) => {
+module.exports = (app) => {
 
     app.post('/login', function(req, res) {
         if(req.body.pass === 'satel'){

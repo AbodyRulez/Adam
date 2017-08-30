@@ -3,8 +3,9 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     ejs = require('ejs'),
     path = require('path');
+
+    app.set('port', (process.env.PORT || 5000));
     
-app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', ejs);
@@ -15,3 +16,9 @@ app.get('/', (req, res) => {
 });
 
 require('./app/routes')(app, express);
+
+
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
+});
+  
